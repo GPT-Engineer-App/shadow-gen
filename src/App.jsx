@@ -8,11 +8,11 @@ function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Router>
+      <Header onOpen={onOpen} />
       <Routes>
-        <Header onOpen={onOpen} />
-        <Route exact path="/" element={<Index />} />
-        <Footer />
+        <Route path="/" element={<Index />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
