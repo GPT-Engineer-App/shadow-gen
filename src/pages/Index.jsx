@@ -60,9 +60,7 @@ const Index = () => {
           <Text fontSize="xl" mb={4}>
             Generate Images with BossMarc AI
           </Text>
-          <Text fontSize="md" p={2} bg="gray.100" rounded="md">
-            {prompt || "Enter your prompt here..."}
-          </Text>
+          <Input value={prompt} onChange={handleInputChange} placeholder="Enter your prompt here..." size="lg" height="100px" p={2} bg="gray.100" rounded="md" />
           <Button rightIcon={<FaArrowRight />} colorScheme="blue" mt={4} onClick={handleSubmit}>
             Generate
           </Button>
