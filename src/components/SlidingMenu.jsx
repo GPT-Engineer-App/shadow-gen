@@ -5,14 +5,16 @@ const SlidingMenu = ({ isOpen, onClose }) => {
     <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
       <DrawerOverlay />
       <DrawerContent>
-        <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
+        <DrawerHeader borderBottomWidth="1px" color="white">
+          Menu
+        </DrawerHeader>
         <DrawerBody>
-          <p>Image Generator</p>
-          <p>AI App 1 (Placeholder)</p>
-          <p>AI App 2 (Placeholder)</p>
-          <p>AI App 3 (Placeholder)</p>
-          <p>Log In</p>
-          <p>Log Out</p>
+          <p style={{ color: "white" }}>Image Generator</p>
+          <p style={{ color: "white" }}>AI App 1 (Placeholder)</p>
+          <p style={{ color: "white" }}>AI App 2 (Placeholder)</p>
+          <p style={{ color: "white" }}>AI App 3 (Placeholder)</p>
+          <p style={{ color: "white" }}>Log In</p>
+          <p style={{ color: "white" }}>Log Out</p>
         </DrawerBody>
       </DrawerContent>
     </Drawer>

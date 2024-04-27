@@ -7,7 +7,7 @@ const Header = ({ onOpen }) => {
       <Button onClick={onOpen} leftIcon={<FaBars />} variant="ghost">
         Menu
       </Button>
-      <Box>Lyn AI Apps</Box>
+      <Box color="white">Lyn AI Apps</Box>
     </Box>
   );
 };
