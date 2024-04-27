@@ -5,6 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 const Index = () => {
   const [prompt, setPrompt] = useState("");
   const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const toast = useToast();
 
   const handleInputChange = (event) => {
@@ -24,6 +25,7 @@ const Index = () => {
     }
 
     try {
+      setIsLoading(true);
       const response = await fetch("https://api.getimg.ai/v1/essential/text-to-image", {
         method: "POST",
         headers: {
@@ -41,7 +43,8 @@ const Index = () => {
       });
 
       const data = await response.json();
-      setImages(data.urls); // Assuming the API returns an object with a urls array containing image links
+      setImages(data.urls);
+      setIsLoading(false);
     } catch (error) {
       toast({
         title: "Error",
@@ -54,7 +57,7 @@ const Index = () => {
   };
 
   return (
-    <Container maxW="container.xl" p={5}>
+    <Container maxW="container.md" p={5}>
       <VStack spacing={8}>
         <Box p={5} shadow="2xl" rounded="md" bg="white">
           <Text fontSize="xl" mb={4}>
@@ -69,11 +72,15 @@ const Index = () => {
           <Text fontSize="xl" mb={4}>
             Generated Images
           </Text>
-          <VStack spacing={4}>
-            {images.map((imgUrl, index) => (
-              <Image key={index} src={imgUrl} alt={`Generated image ${index + 1}`} boxSize="250px" objectFit="cover" />
-            ))}
-          </VStack>
+          {isLoading ? (
+            <Text>Loading...</Text>
+          ) : (
+            <VStack spacing={4}>
+              {images.map((imgUrl, index) => (
+                <Image key={index} src={imgUrl} alt={`Generated image ${index + 1}`} boxSize="250px" objectFit="cover" />
+              ))}
+            </VStack>
+          )}
         </Box>
       </VStack>
     </Container>
