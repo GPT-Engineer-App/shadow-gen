@@ -3,11 +3,11 @@ import { FaBars } from "react-icons/fa";
 
 const Header = ({ onOpen }) => {
   return (
-    <Box bg="blue.500" p={4} color="white" display="flex" justifyContent="space-between" alignItems="center">
+    <Box bg="black" p={4} color="white" display="flex" justifyContent="space-between" alignItems="center">
       <Button onClick={onOpen} leftIcon={<FaBars />} variant="ghost">
         Menu
       </Button>
-      <Box>My React App</Box>
+      <Box>Lyn AI Apps</Box>
     </Box>
   );
 };

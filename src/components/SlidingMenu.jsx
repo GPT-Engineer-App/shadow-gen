@@ -7,9 +7,12 @@ const SlidingMenu = ({ isOpen, onClose }) => {
       <DrawerContent>
         <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
         <DrawerBody>
-          <p>Link 1</p>
-          <p>Link 2</p>
-          <p>Link 3</p>
+          <p>Image Generator</p>
+          <p>AI App 1 (Placeholder)</p>
+          <p>AI App 2 (Placeholder)</p>
+          <p>AI App 3 (Placeholder)</p>
+          <p>Log In</p>
+          <p>Log Out</p>
         </DrawerBody>
       </DrawerContent>
     </Drawer>
